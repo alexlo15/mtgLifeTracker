@@ -1,0 +1,56 @@
+.one {
+    background-color: aqua;
+    height: 50vh;
+    width: 50vw;
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.two {
+    background-color: red;
+    height: 50vh;
+    width: 50vw;
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.three {
+    background-color: green;
+    height: 50vh;
+    width: 50vw;
+}
+.four {
+    background-color: purple;
+    height: 50vh;
+    width: 50vw;
+}
+
+
+/* centers all elements */
+.col-6 {
+    position: relative;
+}
+.col-6 .lifeArea {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* lowers the bottom button while keeping ceneters */
+.bgCheckButton {
+    margin: 0;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#playerOne, #playerTwo, #playerThree, #playerFour {
+    margin-left: 10px;
+    margin-right: 10px;
+}
