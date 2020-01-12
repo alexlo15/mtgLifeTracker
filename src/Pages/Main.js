@@ -91,6 +91,9 @@ class Main extends Component {
         let playersTotal = document.getElementById(playerID).textContent;
         playersTotal -= 1
         document.getElementById(playerID).textContent = playersTotal
+        console.log(this.state.AlexPics)
+        console.log(this.state.KellenPics)
+        console.log(this.state.StevePics)
     };
 
     addOne = (playerID) => {
@@ -99,6 +102,11 @@ class Main extends Component {
         playersTotalNumber += 1
         document.getElementById(playerID).textContent = playersTotalNumber
     };
+
+    changeUserBG = (url, userArea) => {
+        // let thisDoc = document.getElementsByClassName(userArea);
+        // thisDoc.style.backgroundImage = require(url);
+    }
 
 
     // rendering of our page
@@ -116,6 +124,8 @@ class Main extends Component {
                                 <span id="playerOne">40</span>
                                 <button className="plusOne" onClick={() => { this.addOne("playerOne") }}>+1</button>
                             </p>
+
+                            {/* Theme Modal that has ASK sub modals */}
                             <p className="bgCheckButton">
                                 <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">Theme</button>
                             </p>
@@ -182,7 +192,7 @@ class Main extends Component {
                                 </button>
                             </div>
                             <div className="modal-body">
-                                <div class="list-group">
+                                <div className="list-group">
                                     <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#alexModal">Alex</button>
                                     <button className="list-group-item list-group-item-action">Blue</button>
                                     <button className="list-group-item list-group-item-action">Blue</button>
@@ -211,14 +221,13 @@ class Main extends Component {
                                 </button>
                             </div>
                             <div className="modal-body">
-                                <div class="list-group">
-                                    
-                                    <button className="list-group-item list-group-item-action">Blue</button>
-                                    <button className="list-group-item list-group-item-action">Blue</button>
-                                    <button className="list-group-item list-group-item-action">Blue</button>
-                                    <button className="list-group-item list-group-item-action">Blue</button>
-                                    <button className="list-group-item list-group-item-action">Blue</button>
-                                    <button className="list-group-item list-group-item-action">Blue</button>
+                                <div className="list-group">
+
+                                    <button onClick={this.changeUserBG(this.state.AlexPics[0], "one")} className="list-group-item list-group-item-action">Kaalia of the Vast</button>
+                                    <button className="list-group-item list-group-item-action">The Gitrog Monster</button>
+                                    <button className="list-group-item list-group-item-action">Golos, Tireless Pilgrim</button>
+                                    <button className="list-group-item list-group-item-action">Urza, Lord High Artificer</button>
+                                    <button className="list-group-item list-group-item-action">Korvold, Fae-Cursed King</button>
                                 </div>
                             </div>
                             <div className="modal-footer">
