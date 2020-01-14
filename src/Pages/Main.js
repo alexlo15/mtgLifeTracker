@@ -103,21 +103,26 @@ class Main extends Component {
         document.getElementById(playerID).textContent = playersTotalNumber
     };
 
-    changeUserBG = (url, userArea) => {
-        // let thisDoc = document.getElementsByClassName(userArea);
-        // thisDoc.style.backgroundImage = require(url);
-    }
+
+    changeUserBG = (imageUrl, userArea) => {
+        let thisOne = document.getElementById(userArea);
+        console.log(thisOne)
+        thisOne.style.backgroundColor = 'red'
+        // document.getElementById("one").style.backgroundImage = `require(url(${imageUrl}))`;
+    };
+
 
 
     // rendering of our page
     render() {
+
         return (
             <>
                 <div className="row">
 
-                    <div className="one col-6">
+                    <div className="col-6" id="one">
 
-                        <div className="playBox">
+                        <div className="">
 
                             <p className="lifeArea">
                                 <button className="minusOne" onClick={() => { this.subtractOne("playerOne") }}>-1</button>
@@ -135,9 +140,9 @@ class Main extends Component {
 
                     </div>
 
-                    <div className="two col-6">
+                    <div className="col-6" id="two">
 
-                        <div className="playBox">
+                        <div className="">
 
                             <p className="lifeArea">
                                 <button className="minusOne" onClick={() => { this.subtractOne("playerTwo") }}>-1</button>
@@ -153,8 +158,8 @@ class Main extends Component {
 
                 <div className="row">
 
-                    <div className="three col-6">
-                        <div className="playBox">
+                    <div className="col-6" id="three">
+                        <div className="">
 
                             <p className="lifeArea">
                                 <button className="minusOne" onClick={() => { this.subtractOne("playerThree") }}>-1</button>
@@ -165,8 +170,8 @@ class Main extends Component {
                         </div>
                     </div>
 
-                    <div className="four col-6">
-                        <div className="playBox">
+                    <div className="col-6" id="four">
+                        <div className="">
 
                             <p className="lifeArea">
                                 <button className="minusOne" onClick={() => { this.subtractOne("playerFour") }}>-1</button>
@@ -193,11 +198,10 @@ class Main extends Component {
                             </div>
                             <div className="modal-body">
                                 <div className="list-group">
-                                    <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#alexModal">Alex</button>
-                                    <button className="list-group-item list-group-item-action">Blue</button>
-                                    <button className="list-group-item list-group-item-action">Blue</button>
-                                    <button className="list-group-item list-group-item-action">Blue</button>
-                                    <button className="list-group-item list-group-item-action">Blue</button>
+                                    <button type="button" className="btn btn-success" data-toggle="modal" data-target="#alexModal">Alex</button>
+                                    <button type="button" className="btn btn-danger" data-toggle="modal" data-target="#steveModal">Steve</button>
+                                    <button type="button" className="btn btn-dark" data-toggle="modal" data-target="#kelModal">Kellen</button>
+                                    <button className="btn btn-primary">Blue</button>
                                     <button className="list-group-item list-group-item-action">Blue</button>
                                     <button className="list-group-item list-group-item-action">Blue</button>
                                 </div>
@@ -223,6 +227,35 @@ class Main extends Component {
                             <div className="modal-body">
                                 <div className="list-group">
 
+                                    <button onClick={() => { this.changeUserBG(this.state.AlexPics[0], "one") }} className="btn btn-danger">Kaalia of the Vast</button>
+                                    <button className="list-group-item list-group-item-action">The Gitrog Monster</button>
+                                    <button className="list-group-item list-group-item-action">Golos, Tireless Pilgrim</button>
+                                    <button className="list-group-item list-group-item-action">Urza, Lord High Artificer</button>
+                                    <button className="list-group-item list-group-item-action">Korvold, Fae-Cursed King</button>
+                                </div>
+                            </div>
+                            {/* <div className="modal-footer">
+                                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" className="btn btn-primary">Save changes</button>
+                            </div> */}
+                        </div>
+                    </div>
+                </div>
+
+
+                {/* Steve Modal */}
+                <div className="modal fade" id="steveModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                    <div className="modal-dialog modal-dialog-scrollable" role="document">
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <h5 className="modal-title" id="exampleModalScrollableTitle">Modal title</h5>
+                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div className="modal-body">
+                                <div className="list-group">
+
                                     <button onClick={this.changeUserBG(this.state.AlexPics[0], "one")} className="list-group-item list-group-item-action">Kaalia of the Vast</button>
                                     <button className="list-group-item list-group-item-action">The Gitrog Monster</button>
                                     <button className="list-group-item list-group-item-action">Golos, Tireless Pilgrim</button>
@@ -230,15 +263,42 @@ class Main extends Component {
                                     <button className="list-group-item list-group-item-action">Korvold, Fae-Cursed King</button>
                                 </div>
                             </div>
-                            <div className="modal-footer">
+                            {/* <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
                                 <button type="button" className="btn btn-primary">Save changes</button>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
 
 
+                {/* Kellen Modal */}
+                <div className="modal fade" id="kelModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                    <div className="modal-dialog modal-dialog-scrollable" role="document">
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <h5 className="modal-title" id="exampleModalScrollableTitle">Modal title</h5>
+                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div className="modal-body">
+                                <div className="list-group">
+
+                                    <button onClick={this.changeUserBG(this.state.AlexPics[0], "one")} className="list-group-item list-group-item-action">Kaalia of the Vast</button>
+                                    <button className="list-group-item list-group-item-action">The Gitrog Monster</button>
+                                    <button className="list-group-item list-group-item-action">Golos, Tireless Pilgrim</button>
+                                    <button className="list-group-item list-group-item-action">Urza, Lord High Artificer</button>
+                                    <button className="list-group-item list-group-item-action">Korvold, Fae-Cursed King</button>
+                                </div>
+                            </div>
+                            {/* <div className="modal-footer">
+                                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" className="btn btn-primary">Save changes</button>
+                            </div> */}
+                        </div>
+                    </div>
+                </div>
 
 
 

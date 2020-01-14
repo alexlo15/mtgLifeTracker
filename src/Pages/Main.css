@@ -1,4 +1,4 @@
-.one {
+#one {
     background-color: aqua;
     height: 50vh;
     width: 50vw;
@@ -8,7 +8,7 @@
     -o-transform: rotate(180deg);
     transform: rotate(180deg);
 }
-.two {
+#two {
     background-color: red;
     height: 50vh;
     width: 50vw;
@@ -18,12 +18,12 @@
     -o-transform: rotate(180deg);
     transform: rotate(180deg);
 }
-.three {
+#three {
     background-color: green;
     height: 50vh;
     width: 50vw;
 }
-.four {
+#four {
     background-color: purple;
     height: 50vh;
     width: 50vw;
