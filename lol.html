@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./Main.css">
+    <title>Hello, world!</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-6" id="one">
+                <p class="lifeArea">
+                    <button class="minusOne">-1</button>
+                    <span id="playerOne">40</span>
+                    <button class="plusOne">+1</button>
+                </p>
+                <p class="bgCheckButton">
+                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                        data-target="#exampleModalScrollable">Theme</button>
+                </p>
+            </div>
+
+            <div class="col-6" id="two">
+                <p class="lifeArea">
+                    <button class="minusOne">-1</button>
+                    <span id="playerOne">40</span>
+                    <button class="plusOne">+1</button>
+                </p>
+                <p class="bgCheckButton">
+                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                        data-target="#exampleModalScrollable">Theme</button>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-6" id="three">
+                <p class="lifeArea">
+                    <button class="minusOne">-1</button>
+                    <span id="playerOne">40</span>
+                    <button class="plusOne">+1</button>
+                </p>
+
+                <p class="bgCheckButton">
+                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                        data-target="#exampleModalScrollable">Theme</button>
+                </p>
+
+            </div>
+
+            <div class="col-6" id="four">
+                <p class="lifeArea">
+                    <button class="minusOne">-1</button>
+                    <span id="playerOne">40</span>
+                    <button class="plusOne">+1</button>
+                </p>
+
+                <p class="bgCheckButton">
+                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                        data-target="#exampleModalScrollable">Theme</button>
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+
+        let Alex = [
+            "Kaalia of the Vast",
+            "The Gitrog Monster",
+            "Golos, Tireless Pilgrim",
+            "Urza, Lord High Artificer",
+            "Korvold, Fae-Cursed King",
+        ];
+        let Steve = [
+            "Gisela, Blade of Goldnight",
+            "The Scarab God",
+            "Feather, the Redeemed",
+        ];
+        let Kellen = [
+            "Zur the Enchanter",
+            "Chulane, Teller of Tales",
+            "Kenrith, the Returned King",
+        ]
+
+        let AlexPics = [];
+        let KellenPics = [];
+        let StevePics = [];
+
+
+
+        // the image search function
+        fetchImageURLSfromAPI = () => {
+
+            console.log("yes")
+            fetch("https://api.magicthegathering.io/v1/cards?name=kaalia")
+                .then((response) => {
+                    return response.json();
+                })
+                .then((myJson) => {
+                    console.log(myJson.cards);
+                    AlexPics.push(myJson.cards[0].imageUrl)
+                    console.log(AlexPics)
+                });
+            fetch("https://api.magicthegathering.io/v1/cards?name=gitrog")
+                .then((response) => {
+                    return response.json();
+                })
+                .then((myJson) => {
+                    // console.log(myJson.cards);
+                    AlexPics.push(myJson.cards[0].imageUrl)
+                    console.log(AlexPics)
+                });
+
+            // // greedy me search 
+            // for (let i = 0; i < Alex.length; i++) {
+            //     mtg.card.where({
+            //         name: Alex[i]
+            //     })
+            //         .then(cards => {
+
+            //             if (cards[0].imageUrl) {
+            //                 AlexPics.push(cards[0].imageUrl);
+            //                 console.log(cards[0].imageUrl);
+            //                 // this.setState({ AlexPics: [...this.state.AlexPics, cards[0].imageUrl] })
+            //                 // me.push();
+            //             } else if (cards[1].imageUrl) {
+            //                 AlexPics.push(cards[1].imageUrl);
+            //                 console.log(cards[1].imageUrl);
+            //                 // this.setState({ AlexPics: [...this.state.AlexPics, cards[1].imageUrl] })
+            //                 // console.log(this.state.AlexPics);
+            //                 // me.push(cards[1].imageUrl);
+            //             } else {
+            //                 console.log("no")
+            //             }
+            //         })
+            // };
+
+            // //Steve Search
+            // for (let i = 0; i < Steve.length; i++) {
+            //     mtg.card.where({
+            //         name: Steve[i]
+            //     })
+            //         .then(cards => {
+
+            //             if (cards[0].imageUrl) {
+            //                 StevePics.push(cards[0].imageUrl);
+            //                 console.log(cards[0].imageUrl);
+            //                 // this.setState({ AlexPics: [...this.state.AlexPics, cards[0].imageUrl] })
+            //                 // me.push();
+            //             } else if (cards[1].imageUrl) {
+            //                 StevePics.push(cards[1].imageUrl);
+            //                 console.log(cards[1].imageUrl);
+            //                 // this.setState({ AlexPics: [...this.state.AlexPics, cards[1].imageUrl] })
+            //                 // console.log(this.state.AlexPics);
+            //                 // me.push(cards[1].imageUrl);
+            //             } else {
+            //                 console.log("no")
+            //             }
+            //         })
+            // };
+
+            // // Kellen Search
+            // for (let i = 0; i < Kellen.length; i++) {
+            //     mtg.card.where({
+            //         name: Kellen[i]
+            //     })
+            //         .then(cards => {
+
+            //             if (cards[0].imageUrl) {
+            //                 KellenPics.push(cards[0].imageUrl);
+            //                 console.log(cards[0].imageUrl);
+            //                 // this.setState({ AlexPics: [...this.state.AlexPics, cards[0].imageUrl] })
+            //                 // me.push();
+            //             } else if (cards[1].imageUrl) {
+            //                 KellenPics.push(cards[1].imageUrl);
+            //                 console.log(cards[1].imageUrl);
+            //                 // this.setState({ AlexPics: [...this.state.AlexPics, cards[1].imageUrl] })
+            //                 // console.log(this.state.AlexPics);
+            //                 // me.push(cards[1].imageUrl);
+            //             } else {
+            //                 console.log("no")
+            //             }
+            //         })
+            // };
+
+        };
+
+        fetchImageURLSfromAPI();
+
+        // life total button functions
+        subtractOne = (playerID) => {
+            let playersTotal = document.getElementById(playerID).textContent;
+            playersTotal -= 1
+            document.getElementById(playerID).textContent = playersTotal
+            console.log(this.state.AlexPics)
+            console.log(this.state.KellenPics)
+            console.log(this.state.StevePics)
+        };
+
+        addOne = (playerID) => {
+            let playersTotal = document.getElementById(playerID).textContent;
+            let playersTotalNumber = Number(playersTotal);
+            playersTotalNumber += 1
+            document.getElementById(playerID).textContent = playersTotalNumber
+        };
+
+
+        changeUserBG = (imageUrl, userArea) => {
+            let thisOne = document.getElementById(userArea);
+            console.log(this.state.AlexPics[0])
+            if (thisOne === "one") {
+                this.setState({ bg1: this.state.AlexPics[0] })
+                console.log("yes")
+            }
+
+        };
+
+
+
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

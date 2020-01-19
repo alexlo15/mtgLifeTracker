@@ -25,7 +25,12 @@ class Main extends Component {
         ],
         AlexPics: [],
         StevePics: [],
-        KellenPics: []
+        KellenPics: [],
+        bg1: "../red.jpg",
+        bg2: "../red.jpg",
+        bg3: "../red.jpg",
+        bg4: "../red.jpg",
+
     };
 
 
@@ -47,10 +52,14 @@ class Main extends Component {
 
                     if (cards[0].imageUrl) {
                         this.setState({ AlexPics: [...this.state.AlexPics, cards[0].imageUrl] })
+                        // console.log(this.state.AlexPics);
                         // me.push();
-                    } else {
+                    } else if (cards[1].imageUrl) {
                         this.setState({ AlexPics: [...this.state.AlexPics, cards[1].imageUrl] })
+                        // console.log(this.state.AlexPics);
                         // me.push(cards[1].imageUrl);
+                    } else {
+                        console.log("no")
                     }
                 })
         };
@@ -106,9 +115,12 @@ class Main extends Component {
 
     changeUserBG = (imageUrl, userArea) => {
         let thisOne = document.getElementById(userArea);
-        console.log(thisOne)
-        thisOne.style.backgroundColor = 'red'
-        // document.getElementById("one").style.backgroundImage = `require(url(${imageUrl}))`;
+        console.log(this.state.AlexPics[0])
+        if (thisOne === "one") {
+            this.setState({ bg1: this.state.AlexPics[0] })
+            console.log("yes")
+        }
+
     };
 
 
@@ -120,7 +132,7 @@ class Main extends Component {
             <>
                 <div className="row">
 
-                    <div className="col-6" id="one">
+                    <div className="col-6" id="one" style={{ backgroundImage: `url(${this.state.bg1})` }}>
 
                         <div className="">
 
@@ -227,7 +239,7 @@ class Main extends Component {
                             <div className="modal-body">
                                 <div className="list-group">
 
-                                    <button onClick={() => { this.changeUserBG(this.state.AlexPics[0], "one") }} className="btn btn-danger">Kaalia of the Vast</button>
+                                    <button type="submit" onClick={() => this.changeUserBG(this.state.AlexPics[0], "one")} className="btn btn-danger">Kaalia of the Vast</button>
                                     <button className="list-group-item list-group-item-action">The Gitrog Monster</button>
                                     <button className="list-group-item list-group-item-action">Golos, Tireless Pilgrim</button>
                                     <button className="list-group-item list-group-item-action">Urza, Lord High Artificer</button>
