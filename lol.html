@@ -11,7 +11,7 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link rel="stylesheet" href="./Main.css">
-    <title>Hello, world!</title>
+    <title>What's my life at?</title>
 </head>
 
 <body>
@@ -22,55 +22,96 @@
 
             <div class="col-6" id="one">
                 <p class="lifeArea">
-                    <button class="minusOne">-1</button>
+                    <button class="minusOne" onclick="subtractFive('playerOne')">-5</button>
+                    <button class="minusOne" onclick="subtractOne('playerOne')">-1</button>
                     <span id="playerOne">40</span>
-                    <button class="plusOne">+1</button>
+                    <button class="plusOne" onclick="addOne('playerOne')">+1</button>
+                    <button class="plusOne" onclick="addFive('playerOne')">+5</button>
                 </p>
-                <p class="bgCheckButton">
-                    <button type="button" class="btn btn-primary" data-toggle="modal"
-                        data-target="#exampleModalScrollable">Theme</button>
-                </p>
+                <span class="bgCheckButton">
+                    <!-- <button type="button" class="btn btn-primary" data-toggle="modal"
+                        data-target="#exampleModalScrollable">Theme</button> -->
+                    <button type="button" id="bgButton" onclick="changeUserBG('one', 'Green')">Green</button>
+                    <button type="button" id="bgButton" onclick="changeUserBG('one', 'Magenta')">Magenta</button>
+                    <button type="button" id="bgButton" onclick="changeUserBG('one', 'Blue')">Blue</button>
+                    <button type="button" id="bgButton" onclick="changeUserBG('one', 'Beige')">Plains White</button>
+                    <button type="button" id="bgButton" onclick="changeUserBG('one', 'Red')">Red</button>
+                    <button type="button" id="bgButton" onclick="changeUserBG('one', 'Black')">Black</button>
+                    <button type="button" id="bgButton" onclick="changeUserBG('one', 'Gold')">Gold</button>
+                    <button type="button" id="bgButton" onclick="changeUserBG('one', 'White')">White</button>
+                </span>
             </div>
 
             <div class="col-6" id="two">
                 <p class="lifeArea">
-                    <button class="minusOne">-1</button>
-                    <span id="playerOne">40</span>
-                    <button class="plusOne">+1</button>
+                    <button class="minusOne" onclick="subtractFive('playerTwo')">-5</button>
+                    <button class="minusOne" onclick="subtractOne('playerTwo')">-1</button>
+                    <span id="playerTwo">40</span>
+                    <button class="plusOne" onclick="addOne('playerTwo')">+1</button>
+                    <button class="plusOne" onclick="addFive('playerTwo')">+5</button>
                 </p>
-                <p class="bgCheckButton">
-                    <button type="button" class="btn btn-primary" data-toggle="modal"
-                        data-target="#exampleModalScrollable">Theme</button>
-                </p>
+                <span class="bgCheckButton">
+                    <!-- <button type="button" class="btn btn-primary" data-toggle="modal"
+                        data-target="#exampleModalScrollable">Theme</button> -->
+                    <button type="button" id="bgButton" onclick="changeUserBG('two', 'Green')">Green</button>
+                    <button type="button" id="bgButton" onclick="changeUserBG('two', 'Magenta')">Magenta</button>
+                    <button type="button" id="bgButton" onclick="changeUserBG('two', 'Blue')">Blue</button>
+                    <button type="button" id="bgButton" onclick="changeUserBG('two', 'Beige')">Plains White</button>
+                    <button type="button" id="bgButton" onclick="changeUserBG('two', 'Red')">Red</button>
+                    <button type="button" id="bgButton" onclick="changeUserBG('two', 'Black')">Black</button>
+                    <button type="button" id="bgButton" onclick="changeUserBG('two', 'Gold')">Gold</button>
+                    <button type="button" id="bgButton" onclick="changeUserBG('two', 'White')">White</button>
+                </span>
             </div>
         </div>
         <div class="row">
 
             <div class="col-6" id="three">
                 <p class="lifeArea">
-                    <button class="minusOne">-1</button>
-                    <span id="playerOne">40</span>
-                    <button class="plusOne">+1</button>
+                    <button class="minusOne" onclick="subtractFive('playerThree')">-5</button>
+                    <button class="minusOne" onclick="subtractOne('playerThree')">-1</button>
+                    <span id="playerThree">40</span>
+                    <button class="plusOne" onclick="addOne('playerThree')">+1</button>
+                    <button class="plusOne" onclick="addFive('playerThree')">+5</button>
+
                 </p>
 
-                <p class="bgCheckButton">
-                    <button type="button" class="btn btn-primary" data-toggle="modal"
-                        data-target="#exampleModalScrollable">Theme</button>
-                </p>
+                <span class="bgCheckButton">
+                    <!-- <button type="button" class="btn btn-primary" data-toggle="modal"
+                        data-target="#exampleModalScrollable">Theme</button> -->
+                    <button type="button" id="bgButton" onclick="changeUserBG('three', 'Green')">Green</button>
+                    <button type="button" id="bgButton" onclick="changeUserBG('three', 'Magenta')">Magenta</button>
+                    <button type="button" id="bgButton" onclick="changeUserBG('three', 'Blue')">Blue</button>
+                    <button type="button" id="bgButton" onclick="changeUserBG('three', 'Beige')">Plains White</button>
+                    <button type="button" id="bgButton" onclick="changeUserBG('three', 'Red')">Red</button>
+                    <button type="button" id="bgButton" onclick="changeUserBG('three', 'Black')">Black</button>
+                    <button type="button" id="bgButton" onclick="changeUserBG('three', 'Gold')">Gold</button>
+                    <button type="button" id="bgButton" onclick="changeUserBG('three', 'White')">White</button>
+                </span>
 
             </div>
 
             <div class="col-6" id="four">
                 <p class="lifeArea">
-                    <button class="minusOne">-1</button>
-                    <span id="playerOne">40</span>
-                    <button class="plusOne">+1</button>
+                    <button class="minusOne" onclick="subtractFive('playerFour')">-5</button>
+                    <button class="minusOne" onclick="subtractOne('playerFour')">-1</button>
+                    <span id="playerFour">40</span>
+                    <button class="plusOne" onclick="addOne('playerFour')">+1</button>
+                    <button class="plusOne" onclick="addFive('playerFour')">+5</button>
                 </p>
 
-                <p class="bgCheckButton">
-                    <button type="button" class="btn btn-primary" data-toggle="modal"
-                        data-target="#exampleModalScrollable">Theme</button>
-                </p>
+                <span class="bgCheckButton">
+                    <!-- <button type="button" class="btn btn-primary" data-toggle="modal"
+                        data-target="#exampleModalScrollable">Theme</button> -->
+                    <button type="button" id="bgButton forest" onclick="changeUserBG('four', 'Green')">Green</button>
+                    <button type="button" id="bgButton magenta" onclick="changeUserBG('four', 'Magenta')">Magenta</button>
+                    <button type="button" id="bgButton island" onclick="changeUserBG('four', 'Blue')">Blue</button>
+                    <button type="button" id="bgButton plains" onclick="changeUserBG('four', 'Beige')">Plains White</button>
+                    <button type="button" id="bgButton mountain" onclick="changeUserBG('four', 'Red')">Red</button>
+                    <button type="button" id="bgButton swamp" onclick="changeUserBG('four', 'Black')">Black</button>
+                    <button type="button" id="bgButton gold" onclick="changeUserBG('four', 'Gold')">Gold</button>
+                    <button type="button" id="bgButton white" onclick="changeUserBG('four', 'White')">White</button>
+                </span>
 
             </div>
         </div>
@@ -208,9 +249,12 @@
             let playersTotal = document.getElementById(playerID).textContent;
             playersTotal -= 1
             document.getElementById(playerID).textContent = playersTotal
-            console.log(this.state.AlexPics)
-            console.log(this.state.KellenPics)
-            console.log(this.state.StevePics)
+        };
+
+        subtractFive = (playerID) => {
+            let playersTotal = document.getElementById(playerID).textContent;
+            playersTotal -= 5
+            document.getElementById(playerID).textContent = playersTotal
         };
 
         addOne = (playerID) => {
@@ -220,14 +264,18 @@
             document.getElementById(playerID).textContent = playersTotalNumber
         };
 
+        addFive = (playerID) => {
+            let playersTotal = document.getElementById(playerID).textContent;
+            let playersTotalNumber = Number(playersTotal);
+            playersTotalNumber += 5
+            document.getElementById(playerID).textContent = playersTotalNumber
+        };
 
-        changeUserBG = (imageUrl, userArea) => {
-            let thisOne = document.getElementById(userArea);
-            console.log(this.state.AlexPics[0])
-            if (thisOne === "one") {
-                this.setState({ bg1: this.state.AlexPics[0] })
-                console.log("yes")
-            }
+
+        changeUserBG = (userArea, bgChoice) => {
+            let usersArea = document.getElementById(userArea);
+            console.log(usersArea);
+            usersArea.style.backgroundColor = bgChoice;
 
         };
 
