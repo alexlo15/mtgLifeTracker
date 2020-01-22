@@ -24,11 +24,11 @@
 
 
                 <p class="lifeArea">
-                    <button class="minusOne" onclick="subtractFive('playerOne')">-5</button>
-                    <button class="minusOne" onclick="subtractOne('playerOne')">-1</button>
+                    <button class="minusOne" onclick="subtractFive('playerOne', 'one')">-5</button>
+                    <button class="minusOne" onclick="subtractOne('playerOne', 'one')">-1</button>
                     <span id="playerOne">40</span>
-                    <button class="plusOne" onclick="addOne('playerOne')">+1</button>
-                    <button class="plusOne" onclick="addFive('playerOne')">+5</button>
+                    <button class="plusOne" onclick="addOne('playerOne', 'one')">+1</button>
+                    <button class="plusOne" onclick="addFive('playerOne', 'one')">+5</button>
                 </p>
 
 
@@ -50,7 +50,7 @@
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#steveModal1">
                         Steve
                     </button>
-                
+
                 </span>
 
 
@@ -250,10 +250,10 @@
     </div>
 
 
-<!-- Steves 4 modals -->
+    <!-- Steves 4 modals -->
 
 
-<div class="modal fade" id="steveModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    <div class="modal fade" id="steveModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -335,11 +335,11 @@
 
 
 
-<!-- Kellens 4 modals -->
+    <!-- Kellens 4 modals -->
 
 
 
-<div class="modal fade" id="alexModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    <div class="modal fade" id="alexModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -440,6 +440,7 @@
     <script>
 
 
+
         const Alex = [
             "url(./pics/kaalia.jpg)",
             "url(./pics/golos.jpg)",
@@ -468,29 +469,92 @@
 
 
         // life total button functions
-        subtractOne = (playerID) => {
+        subtractOne = (playerID, area) => {
+            let playerstotalArea = document.getElementById(playerID);
             let playersTotal = document.getElementById(playerID).textContent;
+            let playerArea = document.getElementById(area);
             playersTotal -= 1
             document.getElementById(playerID).textContent = playersTotal
+            if (playersTotal > 40) {
+                playerArea.style.color = "Blue"
+            } else if (playersTotal <= 40 && playersTotal > 30) {
+                playerArea.style.color = "Green"
+            } else if (playersTotal <= 30 && playersTotal > 20) {
+                playerArea.style.color = "Yellow"
+                playerstotalArea.style.backgroundColor = "Black"
+            } else if (playersTotal <= 20 && playersTotal > 10) {
+                playerArea.style.color = "Red"
+            } else if (playersTotal <= 10 && playersTotal > 0) {
+                playerArea.style.color = "Brown"
+            } else if (playersTotal <= 0) {
+                playerArea.style.color = "Black"
+            };
         };
-        subtractFive = (playerID) => {
+        subtractFive = (playerID, area) => {
+            let playerstotalArea = document.getElementById(playerID);
             let playersTotal = document.getElementById(playerID).textContent;
+            let playerArea = document.getElementById(area);
             playersTotal -= 5
             document.getElementById(playerID).textContent = playersTotal
+            if (playersTotal > 40) {
+                playerArea.style.color = "Blue"
+            } else if (playersTotal <= 40 && playersTotal > 30) {
+                playerArea.style.color = "Green"
+            } else if (playersTotal <= 30 && playersTotal > 20) {
+                playerArea.style.color = "Yellow"
+                playerstotalArea.style.backgroundColor = "Black"
+            } else if (playersTotal <= 20 && playersTotal > 10) {
+                playerArea.style.color = "Red"
+            } else if (playersTotal <= 10 && playersTotal > 0) {
+                playerArea.style.color = "Brown"
+            } else if (playersTotal <= 0) {
+                playerArea.style.color = "Black"
+            };
         };
-        addOne = (playerID) => {
+        addOne = (playerID, area) => {
+            let playerstotalArea = document.getElementById(playerID);
             let playersTotal = document.getElementById(playerID).textContent;
             let playersTotalNumber = Number(playersTotal);
+            let playerArea = document.getElementById(area);
             playersTotalNumber += 1
             document.getElementById(playerID).textContent = playersTotalNumber
+            if (playersTotalNumber > 40) {
+                playerArea.style.color = "Blue"
+            } else if (playersTotalNumber <= 40 && playersTotalNumber > 30) {
+                playerArea.style.color = "Green"
+            } else if (playersTotalNumber <= 30 && playersTotalNumber > 20) {
+                playerArea.style.color = "Yellow"
+                playerstotalArea.style.backgroundColor = "Black"
+            } else if (playersTotalNumber <= 20 && playersTotalNumber > 10) {
+                playerArea.style.color = "Red"
+            } else if (playersTotalNumber <= 10 && playersTotalNumber > 0) {
+                playerArea.style.color = "Brown"
+            } else if (playersTotalNumber <= 0) {
+                playerArea.style.color = "Black"
+            };
         };
-        addFive = (playerID) => {
+        addFive = (playerID, area) => {
+            let playerstotalArea = document.getElementById(playerID);
             let playersTotal = document.getElementById(playerID).textContent;
             let playersTotalNumber = Number(playersTotal);
+            let playerArea = document.getElementById(area);
             playersTotalNumber += 5
             document.getElementById(playerID).textContent = playersTotalNumber
+            if (playersTotalNumber > 40) {
+                playerArea.style.color = "Blue"
+            } else if (playersTotalNumber <= 40 && playersTotalNumber > 30) {
+                playerArea.style.color = "Green"
+            } else if (playersTotalNumber <= 30 && playersTotalNumber > 20) {
+                playerArea.style.color = "Yellow"
+                playerstotalArea.style.backgroundColor = "Black"
+            } else if (playersTotalNumber <= 20 && playersTotalNumber > 10) {
+                playerArea.style.color = "Red"
+            } else if (playersTotalNumber <= 10 && playersTotalNumber > 0) {
+                playerArea.style.color = "Brown"
+            } else if (playersTotalNumber <= 0) {
+                playerArea.style.color = "Black"
+            };
         };
-
 
         changeUserBG = (userArea, bgChoice) => {
             let usersArea = document.getElementById(userArea);
