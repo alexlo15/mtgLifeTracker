@@ -5,12 +5,13 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link rel="stylesheet" href="./Main.css">
+    <script src="https://kit.fontawesome.com/c4e6835a67.js" crossorigin="anonymous"></script>
     <title>What's my life at?</title>
 </head>
 
@@ -24,11 +25,11 @@
 
 
                 <p class="lifeArea">
-                    <button class="minusOne" onclick="subtractFive('playerOne', 'one')">-5</button>
-                    <button class="minusOne" onclick="subtractOne('playerOne', 'one')">-1</button>
+                    <button class="minusFive" onclick="subtractFive('playerOne', 'one')"><i class="fas fa-lg fa-arrow-circle-down">5</i></button>
+                    <button class="minusOne" onclick="subtractOne('playerOne', 'one')"><i class="fas fa-lg fa-arrow-circle-down">1</i></button>
                     <span id="playerOne">40</span>
-                    <button class="plusOne" onclick="addOne('playerOne', 'one')">+1</button>
-                    <button class="plusOne" onclick="addFive('playerOne', 'one')">+5</button>
+                    <button class="plusOne" onclick="addOne('playerOne', 'one')"><i class="fas fa-lg fa-arrow-circle-up">1</i></button>
+                    <button class="plusFive" onclick="addFive('playerOne', 'one')"><i class="fas fa-lg fa-arrow-circle-up">5</i></button>
                 </p>
 
 
@@ -36,11 +37,14 @@
                 <span class="bgCheckButton" style="margin-top: 20%;">
                     <!-- <button type="button" class="btn btn-primary" data-toggle="modal"
                                 data-target="#exampleModalScrollable">Theme</button> -->
-                    <button type="button" id="bgButton" onclick="changeUserBG('one', 'Green')">Green</button>
-                    <button type="button" id="bgButton" onclick="changeUserBG('one', 'Blue')">Blue</button>
-                    <button type="button" id="bgButton" onclick="changeUserBG('one', 'Beige')">White</button>
-                    <button type="button" id="bgButton" onclick="changeUserBG('one', 'Red')">Red</button>
-                    <button type="button" id="bgButton" onclick="changeUserBG('one', 'Black')">Black</button>
+                    <button type="button" id="bgButton" class="green"
+                        onclick="changeUserBG('one', 'Green')">Green</button>
+                    <button type="button" id="bgButton" class="blue" onclick="changeUserBG('one', 'Blue')">Blue</button>
+                    <button type="button" id="bgButton" class="white"
+                        onclick="changeUserBG('one', 'Beige')">White</button>
+                    <button type="button" id="bgButton" class="red" onclick="changeUserBG('one', 'Red')">Red</button>
+                    <button type="button" id="bgButton" class="black"
+                        onclick="changeUserBG('one', 'Black')">Black</button>
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#alexModal1">
                         Alex
                     </button>
@@ -59,20 +63,23 @@
 
             <div class="col-6" id="two">
                 <p class="lifeArea">
-                    <button class="minusOne" onclick="subtractFive('playerTwo')">-5</button>
-                    <button class="minusOne" onclick="subtractOne('playerTwo')">-1</button>
+                    <button class="minusFive" onclick="subtractFive('playerTwo')"><i class="fas fa-lg fa-arrow-circle-down">5</i></button>
+                    <button class="minusOne" onclick="subtractOne('playerTwo')"><i class="fas fa-lg fa-arrow-circle-down">1</i></button>
                     <span id="playerTwo">40</span>
-                    <button class="plusOne" onclick="addOne('playerTwo')">+1</button>
-                    <button class="plusOne" onclick="addFive('playerTwo')">+5</button>
+                    <button class="plusOne" onclick="addOne('playerTwo')"><i class="fas fa-lg fa-arrow-circle-up">1</i></button>
+                    <button class="plusFive" onclick="addFive('playerTwo')"><i class="fas fa-lg fa-arrow-circle-up">5</i></button>
                 </p>
                 <span class="bgCheckButton" style="margin-top: 20%;">
                     <!-- <button type="button" class="btn btn-primary" data-toggle="modal"
                         data-target="#exampleModalScrollable">Theme</button> -->
-                    <button type="button" id="bgButton" onclick="changeUserBG('two', 'Green')">Green</button>
-                    <button type="button" id="bgButton" onclick="changeUserBG('two', 'Blue')">Blue</button>
-                    <button type="button" id="bgButton" onclick="changeUserBG('two', 'Beige')"> White</button>
-                    <button type="button" id="bgButton" onclick="changeUserBG('two', 'Red')">Red</button>
-                    <button type="button" id="bgButton" onclick="changeUserBG('two', 'Black')">Black</button>
+                    <button type="button" id="bgButton" class="green"
+                        onclick="changeUserBG('two', 'Green')">Green</button>
+                    <button type="button" id="bgButton" class="blue" onclick="changeUserBG('two', 'Blue')">Blue</button>
+                    <button type="button" id="bgButton" class="white" onclick="changeUserBG('two', 'Beige')">
+                        White</button>
+                    <button type="button" id="bgButton" class="red" onclick="changeUserBG('two', 'Red')">Red</button>
+                    <button type="button" id="bgButton" class="black"
+                        onclick="changeUserBG('two', 'Black')">Black</button>
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#alexModal2">
                         Alex
                     </button>
@@ -89,29 +96,33 @@
 
             <div class="col-6" id="three">
                 <p class="lifeArea">
-                    <button class="minusOne" onclick="subtractFive('playerThree')">-5</button>
-                    <button class="minusOne" onclick="subtractOne('playerThree')">-1</button>
+                    <button class="minusFive" onclick="subtractFive('playerThree')"><i class="fas fa-lg fa-arrow-circle-down">5</i></button>
+                    <button class="minusOne" onclick="subtractOne('playerThree')"><i class="fas fa-lg fa-arrow-circle-down">1</i></button>
                     <span id="playerThree">40</span>
-                    <button class="plusOne" onclick="addOne('playerThree')">+1</button>
-                    <button class="plusOne" onclick="addFive('playerThree')">+5</button>
+                    <button class="plusOne" onclick="addOne('playerThree')"><i class="fas fa-lg fa-arrow-circle-up">1</i></button>
+                    <button class="plusFive" onclick="addFive('playerThree')"><i class="fas fa-lg fa-arrow-circle-up">5</i></button>
 
                 </p>
 
                 <span class="bgCheckButton" style="margin-top: 20%;">
                     <!-- <button type="button" class="btn btn-primary" data-toggle="modal"
                         data-target="#exampleModalScrollable">Theme</button> -->
-                    <button type="button" id="bgButton" onclick="changeUserBG('three', 'Green')">Green</button>
-                    <button type="button" id="bgButton" onclick="changeUserBG('three', 'Blue')">Blue</button>
-                    <button type="button" id="bgButton" onclick="changeUserBG('three', 'Beige')"> White</button>
-                    <button type="button" id="bgButton" onclick="changeUserBG('three', 'Red')">Red</button>
-                    <button type="button" id="bgButton" onclick="changeUserBG('three', 'Black')">Black</button>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#alexModal3">
+                    <button type="button" id="bgButton" class="green"
+                        onclick="changeUserBG('three', 'Green')">Green</button>
+                    <button type="button" id="bgButton" class="blue"
+                        onclick="changeUserBG('three', 'Blue')">Blue</button>
+                    <button type="button" id="bgButton" class="white" onclick="changeUserBG('three', 'Beige')">
+                        White</button>
+                    <button type="button" id="bgButton" class="red" onclick="changeUserBG('three', 'Red')">Red</button>
+                    <button type="button" id="bgButton" class="black"
+                        onclick="changeUserBG('three', 'Black')">Black</button>
+                    <button type="button" class="mt-2 btn btn-primary" data-toggle="modal" data-target="#alexModal3">
                         Alex
                     </button>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#kellenModal3">
+                    <button type="button" class="mt-2 btn btn-primary" data-toggle="modal" data-target="#kellenModal3">
                         Kellen
                     </button>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#steveModal3">
+                    <button type="button" class="mt-2 btn btn-primary" data-toggle="modal" data-target="#steveModal3">
                         Steve
                     </button>
                 </span>
@@ -120,21 +131,25 @@
 
             <div class="col-6" id="four">
                 <p class="lifeArea">
-                    <button class="minusOne" onclick="subtractFive('playerFour')">-5</button>
-                    <button class="minusOne" onclick="subtractOne('playerFour')">-1</button>
+                    <button class="minusFive" onclick="subtractFive('playerFour')"><i class="fas fa-lg fa-arrow-circle-down">5</i></button>
+                    <button class="minusOne" onclick="subtractOne('playerFour')"><i class="fas fa-lg fa-arrow-circle-down">1</i></button>
                     <span id="playerFour">40</span>
-                    <button class="plusOne" onclick="addOne('playerFour')">+1</button>
-                    <button class="plusOne" onclick="addFive('playerFour')">+5</button>
+                    <button class="plusOne" onclick="addOne('playerFour')"><i class="fas fa-lg fa-arrow-circle-up">1</i></button>
+                    <button class="plusFive" onclick="addFive('playerFour')"><i class="fas fa-lg fa-arrow-circle-up">5</i></button>
                 </p>
 
                 <span class="bgCheckButton" style="margin-top: 20%;">
                     <!-- <button type="button" class="btn btn-primary" data-toggle="modal"
                         data-target="#exampleModalScrollable">Theme</button> -->
-                    <button type="button" id="bgButton" onclick="changeUserBG('four', 'Green')">Green</button>
-                    <button type="button" id="bgButton" onclick="changeUserBG('four', 'Blue')">Blue</button>
-                    <button type="button" id="bgButton" onclick="changeUserBG('four', 'Beige')">White</button>
-                    <button type="button" id="bgButton" onclick="changeUserBG('four', 'Red')">Red</button>
-                    <button type="button" id="bgButton" onclick="changeUserBG('four', 'Black')">Black</button>
+                    <button type="button" id="bgButton" class="green"
+                        onclick="changeUserBG('four', 'Green')">Green</button>
+                    <button type="button" id="bgButton" class="blue"
+                        onclick="changeUserBG('four', 'Blue')">Blue</button>
+                    <button type="button" id="bgButton" class="white"
+                        onclick="changeUserBG('four', 'Beige')">White</button>
+                    <button type="button" id="bgButton" class="red" onclick="changeUserBG('four', 'Red')">Red</button>
+                    <button type="button" id="bgButton" class="black"
+                        onclick="changeUserBG('four', 'Black')">Black</button>
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#alexModal4">
                         Alex
                     </button>

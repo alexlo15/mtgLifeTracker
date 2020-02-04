@@ -1,6 +1,6 @@
-
 /* the flipping of 2 and placment of all 4 squares */
-#one, #two  {
+
+#one, #two {
     /* background-image: url("../red.jpg"); */
     height: 50vh;
     width: 50vw;
@@ -10,16 +10,18 @@
     -o-transform: rotate(180deg);
     transform: rotate(180deg);
 }
+
 #three, #four {
     height: 50vh;
     width: 50vw;
 }
 
-
 /* centers all elements */
+
 .col-6 {
     position: relative;
 }
+
 .col-6 .lifeArea {
     margin: 0;
     position: absolute;
@@ -29,6 +31,7 @@
 }
 
 /* lowers the bottom button while keeping centers */
+
 .bgCheckButton {
     margin: 0;
     position: absolute;
@@ -37,22 +40,71 @@
     transform: translate(-50%, -50%);
 }
 
-#bgButton{
-    
+#bgButton {
+    border-radius: 5px;
 }
 
 /*  the actual life totals*/
+
 #playerOne, #playerTwo, #playerThree, #playerFour {
     margin-left: 10px;
     margin-right: 10px;
     font-size: 50px;
     font-family: fantasy;
+    background-color: rgba(216, 191, 216, 0.514);
 }
 
 /* background image size */
-#one, #two, #three, #four{
+
+#one, #two, #three, #four {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
 }
 
+.plusOne, .minusOne, .plusFive, .minusFive {
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    display: inline;
+}
+
+.plusFive {
+    background-color: green;
+}
+
+.plusOne {
+    background-color: blueviolet;
+}
+
+.minusOne {
+    background-color: gold;
+}
+
+.minusFive {
+    background-color: tomato;
+}
+
+/* background button colors */
+
+.green {
+    background-color: green;
+}
+
+.white {
+    background-color: blanchedalmond;
+}
+
+.blue {
+    background-color: blue;
+    color: white;
+}
+
+.red {
+    background-color: red;
+}
+
+.black {
+    background-color: black;
+    color: white;
+}
